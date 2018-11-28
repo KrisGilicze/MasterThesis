@@ -1,0 +1,169 @@
+\documentclass[pdftex,12pt,a4paper,12pt,twoside]{report}
+\usepackage{csquotes}
+\usepackage[pdftex]{graphicx}
+\usepackage[ansinew]{inputenc}
+\usepackage{geometry}
+\usepackage{bbold}
+\usepackage{caption}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\leftmark}
+\fancyfoot[CE,CO]{\thepage}
+
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\pagenumbering{arabic}
+
+\usepackage{tocloft}
+
+
+
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{biblio.bib}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-20pt}{40pt} %second argument before spacing
+
+%landscape mode for some pages
+\usepackage{pdflscape}
+
+%continuos figure and table numbering
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\graphicspath{ {images/} }
+
+\begin{document}
+	
+	
+	
+	
+%first titlepage
+\begin{titlepage}
+
+%%LR
+\sffamily %Schriftartänderung zurücksetzen erlaubt?
+\begin{center}
+% Oberer Teil der Titelseite:
+\includegraphics[width=0.3\textwidth]{images/logo2.jpg}
+\hfill
+\includegraphics[width=0.4\textwidth]{images/logo1.jpg}  
+\\[5cm]
+
+{\LARGE Helmholtz Zentrum München}\\[0.5cm]
+{Institute of Computational Biology}\\[2cm]
+{\Large Bachelor's Thesis in Bioinformatics}\\[1.5cm]
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries Major Axes of Variation in the Blood Metabolome}\\[0.4cm]
+
+\HRule \\[1.5cm]
+
+{\Large Kristóf Balázs Gilicze}\\[2.5cm]
+
+\vfill
+\end{center}
+\end{titlepage}
+\thispagestyle{empty}
+
+
+
+
+
+%second titlepage
+%%LR comprehensive title
+\begin{titlepage}
+	
+%Schriftartänderung zurückgesetzen erlaubt? (Wenn ja --> Vorsicht Klammer)
+{\sffamily
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{logo2.jpg}
+\hfill
+\includegraphics[width=0.4\textwidth]{logo1.jpg}  
+\\[1.5cm]
+
+{\LARGE Department of Informatics}\\[0.5cm]
+{Technische Universit\"at M\"unchen}\\[2cm]
+{\Large Bachelor's Thesis in Bioinformatics}\\[2cm]
+{\textbf{\LARGE Major Axes of Variation in the Blood Metabolome}}\\[2cm]
+{\textbf{\LARGE Variationsachsen im Blutmetabolom}}\\[4cm]
+\end{center}
+
+
+\begin{center}\Large
+  \begin{tabular}{ll}
+    Author:& Kristof Balázs Gilicze\\
+    Supervisor: &  Prof. Dr. Fabian Theis\\
+    Advisor:        &  Jörg Bartel und Dr. Jan Krumsiek\\
+    Submitted:     & 15.09.2016\\
+  \end{tabular}
+\end{center}
+
+}% end title page
+
+\end{titlepage}
+
+
+
+
+%Confirmation
+\thispagestyle{empty}
+\begin{Large}
+	\noindent
+	I confirm that this bachelor's thesis is my own work and I have documented all sources and material used.\\\\\\\\
+	
+	\ensuremath{\overline{\mbox{Place, Date}\hspace{8em}}
+		\hspace{2em}
+		\overline{\mbox{Signature}\hspace{10em}}
+	}
+\end{Large}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% thesis content starts here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
+%\chapter{Abstract_deutsch}
+\input{chapters/01abstract_deutsch.tex}
+\newpage
+%\chapter{Abstract_english}
+\input{chapters/02abstract_englisch.tex}
+\newpage
+\setlength{\cftbeforetoctitleskip}{-1em}
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+%\chapter{Introduction}
+\input{chapters/03introduction.tex}
+\newpage
+%\chapter{Content}
+\input{chapters/04content.tex}
+\newpage
+%\chapter{Summary_and_Outlook}
+\input{chapters/05summaryAndProspect.tex}
+\newpage
+
+
+
+
+
+\printbibliography
+
+
+
+\end{document}
